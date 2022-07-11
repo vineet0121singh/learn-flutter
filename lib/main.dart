@@ -6,26 +6,23 @@ void main(List<String> args) {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-  final string = 'flutter demo code';
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Hello World',
+      title: "Hello Flutter",
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("Hello World"),
+          title: const Text("Hello Flutter"),
         ),
-        body: const Center(
-          child: MyStatelessWidget(),
-        ),
+        body: const Center(child: MyAbsorbWidget()),
       ),
     );
   }
 }
 
-class MyStatelessWidget extends StatelessWidget {
-  const MyStatelessWidget({Key? key}) : super(key: key);
+class MyAbsorbWidget extends StatelessWidget {
+  const MyAbsorbWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,19 +30,18 @@ class MyStatelessWidget extends StatelessWidget {
       alignment: AlignmentDirectional.center,
       children: [
         SizedBox(
-          width: 100.0,
           height: 200.0,
+          width: 100.0,
           child: ElevatedButton(onPressed: () {}, child: null),
         ),
         SizedBox(
-          width: 200.0,
           height: 100.0,
+          width: 200.0,
           child: AbsorbPointer(
-            child: ElevatedButton(
-                style: ElevatedButton.styleFrom(primary: Colors.blue.shade200),
-                onPressed: () {},
-                child: null),
-          ),
+              child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(primary: Colors.cyan),
+                  onPressed: () {},
+                  child: null)),
         )
       ],
     );
